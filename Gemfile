@@ -16,6 +16,10 @@ gem 'grape'
 gem 'grape-swagger'
 gem 'grape-swagger-rails'
 
+# Authentication
+gem 'devise'
+gem 'devise-jwt'
+
 group :development, :test do
   # Debugging
   gem 'byebug'
@@ -26,6 +30,7 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rubocop-rspec', require: false
 
+  # Testing
   gem 'rspec-rails'
 end
 
