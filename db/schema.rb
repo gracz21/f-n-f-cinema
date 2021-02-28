@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 2021_02_27_211625) do
     t.string "jti", null: false
     t.string "aud"
     t.datetime "exp", null: false
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.index ["jti"], name: "index_allowlisted_jwts_on_jti", unique: true
-    t.index ["users_id"], name: "index_allowlisted_jwts_on_users_id"
+    t.index ["user_id"], name: "index_allowlisted_jwts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,5 +37,5 @@ ActiveRecord::Schema.define(version: 2021_02_27_211625) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "allowlisted_jwts", "users", column: "users_id", on_delete: :cascade
+  add_foreign_key "allowlisted_jwts", "users", on_delete: :cascade
 end
