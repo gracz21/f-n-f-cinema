@@ -12,9 +12,11 @@ gem 'puma'
 gem 'rails', '~> 6.1.3'
 
 # API development
+gem 'dry-validation'
 gem 'grape'
 gem 'grape-swagger'
 gem 'grape-swagger-rails'
+gem 'jsonapi-serializer'
 gem 'rack-cors'
 
 # Authentication
@@ -38,4 +40,8 @@ end
 group :development do
   gem 'listen', '~> 3.3'
   gem 'spring'
+end
+
+group :test do
+  gem 'shoulda-matchers'
 end
