@@ -15,6 +15,7 @@ gem 'rails', '~> 6.1.3'
 gem 'grape'
 gem 'grape-swagger'
 gem 'grape-swagger-rails'
+gem 'rack-cors'
 
 # Authentication
 gem 'devise'
