@@ -1,11 +1,16 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :users,
-             defaults: { format: :json },
-             path: '',
-             path_names: {
-               sign_in: 'login',
-               sign_out: 'logout'
-             }
+  scope :api do
+    devise_for :users,
+               defaults: { format: :json },
+               path: '',
+               path_names: {
+                 sign_in: 'login',
+                 sign_out: 'logout'
+               }
+    mount API::Base, at: '/'
+  end
+
+  mount GrapeSwaggerRails::Engine => '/swagger'
 end
