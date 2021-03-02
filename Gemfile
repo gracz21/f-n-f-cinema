@@ -17,6 +17,7 @@ gem 'grape'
 gem 'grape-swagger'
 gem 'grape-swagger-rails'
 gem 'jsonapi-serializer'
+gem 'pundit'
 gem 'rack-cors'
 
 # Authentication
