@@ -2,9 +2,13 @@
 
 module API
   class Base < Grape::API
+    include Rescuers
+
     after { verify_authorized }
 
     helpers Helpers::AuthHelper
+    helpers Helpers::ErrorHelper
+
     add_swagger_documentation(
       mount_path: '/docs',
       array_use_braces: true,
