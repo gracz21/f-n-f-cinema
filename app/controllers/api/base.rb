@@ -2,6 +2,8 @@
 
 module API
   class Base < Grape::API
+    after { verify_authorized }
+
     helpers Helpers::AuthHelper
     add_swagger_documentation(
       mount_path: '/docs',
