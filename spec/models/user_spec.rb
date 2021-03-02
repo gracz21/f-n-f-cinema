@@ -6,7 +6,7 @@ describe User, type: :model do
   describe '#role?' do
     subject(:call) { user.role?(role) }
 
-    let(:user) { User.create(is_cinema_worker: is_cinema_worker) }
+    let(:user) { User.create!(is_cinema_worker: is_cinema_worker) }
     let(:role) { UserRoles::CINEMA_WORKER }
 
     context 'when user has requested role' do

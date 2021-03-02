@@ -47,7 +47,7 @@ describe Users::CreateValidator, type: :validator do
     end
 
     context 'with used email' do
-      before { User.create(email: email) }
+      before { User.create!(email: email) }
 
       it_behaves_like 'failing validation'
     end

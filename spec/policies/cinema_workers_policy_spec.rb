@@ -8,7 +8,7 @@ describe CinemaWorkersPolicy, type: :policy do
   describe '#create?' do
     subject(:call) { policy.create? }
 
-    let(:user) { User.create(is_cinema_worker: is_cinema_worker) }
+    let(:user) { User.create!(is_cinema_worker: is_cinema_worker) }
     let(:resource) { User }
 
     context 'when given user is a cinema worker' do
