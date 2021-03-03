@@ -38,7 +38,7 @@ module API
       end
 
       rescue_from :all do
-        render_jsonapi_errors(
+        render_json_api_error(
           status: 500,
           title: 'Internal server error',
           description: 'Something went wrong, please try again later'
