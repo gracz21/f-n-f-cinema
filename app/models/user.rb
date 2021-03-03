@@ -7,4 +7,8 @@ class User < ApplicationRecord
          :recoverable,
          :jwt_authenticatable,
          jwt_revocation_strategy: self
+
+  def role?(name)
+    name == UserRoles::CINEMA_WORKER ? is_cinema_worker : false
+  end
 end
