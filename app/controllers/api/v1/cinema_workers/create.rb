@@ -21,7 +21,7 @@ module API
         end
 
         post do
-          authorize User, :create?, policy_class: CinemaWorkersPolicy
+          authorize User, :create?, policy_class: CinemaWorkerPolicy
 
           ::Users::CreateValidator.new.validate(permitted_params)
 

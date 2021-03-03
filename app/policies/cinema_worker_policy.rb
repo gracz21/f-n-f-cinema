@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CinemaWorkersPolicy < ApplicationPolicy
+class CinemaWorkerPolicy < ApplicationPolicy
   def create?
     user&.role?(UserRoles::CINEMA_WORKER)
   end
