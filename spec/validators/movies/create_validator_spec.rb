@@ -29,7 +29,7 @@ describe Movies::CreateValidator, type: :validator do
     end
 
     context 'with already used OMDb ID' do
-      before { Movie.create(omdb_id: omdb_id) }
+      before { Movie.create!(omdb_id: omdb_id) }
 
       it_behaves_like 'failing validation'
     end

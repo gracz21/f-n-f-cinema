@@ -5,7 +5,7 @@ require 'rails_helper'
 describe Movies::CreateSerializer, type: :serializer do
   subject(:serializer) { described_class.new(movie) }
 
-  let(:movie) { Movie.create(omdb_id: omdb_id, price: price) }
+  let(:movie) { Movie.create!(omdb_id: omdb_id, price: price) }
 
   let(:omdb_id) { 'tt0232500' }
   let(:price) { 13.0 }

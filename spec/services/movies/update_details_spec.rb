@@ -8,7 +8,7 @@ describe Movies::UpdateDetails, type: :service do
   describe '#call' do
     subject(:call) { service.call(movie) }
 
-    let(:movie) { Movie.create(omdb_id: 'tt0232500') }
+    let(:movie) { Movie.create!(omdb_id: 'tt0232500') }
 
     before { allow(ENV).to receive(:[]).with('OMDB_API_KEY').and_return(api_key) }
 

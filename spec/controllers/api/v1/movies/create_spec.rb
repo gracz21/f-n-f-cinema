@@ -85,7 +85,7 @@ describe API::V1::Movies::Create, type: :request do
       end
 
       context 'with invalid params' do
-        before { Movie.create(omdb_id: omdb_id) }
+        before { Movie.create!(omdb_id: omdb_id) }
 
         it 'responds with 422 status' do
           call
