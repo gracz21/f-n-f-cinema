@@ -2,6 +2,8 @@
 
 module API
   module Helpers
+    # Includes some basic methods used for proper representation of app-level exceptions
+    # in a form of HTTP errors with JSON API compliant format
     module ErrorHelper
       extend ::Grape::API::Helpers
 
