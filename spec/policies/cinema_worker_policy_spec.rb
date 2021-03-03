@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe CinemaWorkersPolicy, type: :policy do
+describe CinemaWorkerPolicy, type: :policy do
   subject(:policy) { described_class.new(user, resource) }
 
   describe '#create?' do
