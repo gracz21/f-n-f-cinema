@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_222901) do
+ActiveRecord::Schema.define(version: 2021_03_02_194324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,21 @@ ActiveRecord::Schema.define(version: 2021_03_01_222901) do
     t.bigint "user_id", null: false
     t.index ["jti"], name: "index_allowlisted_jwts_on_jti", unique: true
     t.index ["user_id"], name: "index_allowlisted_jwts_on_user_id"
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.string "omdb_id"
+    t.integer "omdb_fetch_status"
+    t.string "omdb_fetch_error"
+    t.float "price"
+    t.string "name"
+    t.string "description"
+    t.string "release_date"
+    t.string "imdb_rating"
+    t.string "runtime"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["omdb_id"], name: "index_movies_on_omdb_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
