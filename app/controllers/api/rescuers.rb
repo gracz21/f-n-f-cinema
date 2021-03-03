@@ -29,7 +29,7 @@ module API
         )
       end
 
-      rescue_from ValidationError do |error|
+      rescue_from ValidationError, Grape::Exceptions::ValidationErrors do |error|
         render_json_api_error(
           status: 422,
           title: 'Invalid payload',

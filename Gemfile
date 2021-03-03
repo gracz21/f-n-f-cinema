@@ -36,6 +36,9 @@ group :development, :test do
 
   # Testing
   gem 'rspec-rails'
+
+  # Envs management
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -45,4 +48,6 @@ end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'vcr'
+  gem 'webmock'
 end

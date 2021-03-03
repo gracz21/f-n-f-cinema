@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?apikey=some_valid_api_key&i=tt0232500
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - www.omdbapi.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 Mar 2021 20:49:31 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d7c1876c9d508245bb23ed5e8295e04a41614718171; expires=Thu, 01-Apr-21
+        20:49:31 GMT; path=/; domain=.omdbapi.com; HttpOnly; SameSite=Lax
+      Cache-Control:
+      - public, max-age=86400
+      Expires:
+      - Tue, 02 Mar 2021 21:00:30 GMT
+      Last-Modified:
+      - Tue, 02 Mar 2021 20:00:30 GMT
+      Vary:
+      - "*, Accept-Encoding"
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Cf-Cache-Status:
+      - HIT
+      Age:
+      - '2941'
+      Cf-Request-Id:
+      - '08964d12690000cca7c7b35000000001'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 629d7dfd7fdacca7-WAW
+    body:
+      encoding: ASCII-8BIT
+      string: '{"Title":"The Fast and the Furious","Year":"2001","Rated":"PG-13","Released":"22
+        Jun 2001","Runtime":"106 min","Genre":"Action, Crime, Thriller","Director":"Rob
+        Cohen","Writer":"Ken Li (magazine article \"Racer X\"), Gary Scott Thompson
+        (screen story), Gary Scott Thompson (screenplay), Erik Bergquist (screenplay),
+        David Ayer (screenplay)","Actors":"Paul Walker, Vin Diesel, Michelle Rodriguez,
+        Jordana Brewster","Plot":"Los Angeles police officer Brian O''Conner must
+        decide where his loyalty really lies when he becomes enamored with the street
+        racing world he has been sent undercover to destroy.","Language":"English,
+        Spanish","Country":"USA, Germany","Awards":"11 wins & 18 nominations.","Poster":"https://m.media-amazon.com/images/M/MV5BNzlkNzVjMDMtOTdhZC00MGE1LTkxODctMzFmMjkwZmMxZjFhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg","Ratings":[{"Source":"Internet
+        Movie Database","Value":"6.8/10"},{"Source":"Rotten Tomatoes","Value":"53%"},{"Source":"Metacritic","Value":"58/100"}],"Metascore":"58","imdbRating":"6.8","imdbVotes":"348,745","imdbID":"tt0232500","Type":"movie","DVD":"10
+        Sep 2015","BoxOffice":"$144,533,925","Production":"Universal Pictures, Neal
+        H. Moritz Productions, Original Film","Website":"N/A","Response":"True"}'
+  recorded_at: Tue, 02 Mar 2021 20:49:31 GMT
+recorded_with: VCR 6.0.0

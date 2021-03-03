@@ -12,6 +12,7 @@ module API
       after { verify_authorized }
 
       mount CinemaWorkers::Base
+      mount Movies::Base
       mount Users::Base
     end
   end
