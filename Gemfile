@@ -36,6 +36,9 @@ group :development, :test do
 
   # Testing
   gem 'rspec-rails'
+
+  # Envs management
+  gem 'dotenv-rails'
 end
 
 group :development do
