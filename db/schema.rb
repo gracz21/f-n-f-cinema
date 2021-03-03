@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_192916) do
+ActiveRecord::Schema.define(version: 2021_03_03_194609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 2021_03_03_192916) do
     t.string "runtime"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "overall_ratings_sum"
+    t.integer "overall_ratings_count"
     t.index ["omdb_id"], name: "index_movies_on_omdb_id", unique: true
   end
 
