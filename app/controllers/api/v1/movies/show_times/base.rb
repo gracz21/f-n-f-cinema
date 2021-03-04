@@ -7,6 +7,7 @@ module API
         class Base < Grape::API
           namespace :show_times do
             mount Create
+            mount Index
           end
         end
       end
