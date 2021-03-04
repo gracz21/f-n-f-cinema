@@ -13,6 +13,7 @@ module API
 
       mount CinemaWorkers::Base
       mount Movies::Base
+      mount ShowTimes::Base
       mount Users::Base
     end
   end

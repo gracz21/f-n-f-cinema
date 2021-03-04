@@ -4,7 +4,7 @@ module API
   module V1
     module Movies
       class Show < Grape::API
-        desc '[Cinema worker only] Updates given movie',
+        desc '[Public] Show given movie',
              success: { code: 200, message: 'Movie found and returned' },
              failure: [
                { code: 404, message: 'Movie not found' }

@@ -18,6 +18,7 @@ module API
             mount Update
 
             mount Ratings::Base
+            mount ShowTimes::Base
           end
         end
       end

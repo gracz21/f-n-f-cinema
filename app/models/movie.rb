@@ -6,4 +6,5 @@ class Movie < ApplicationRecord
            foreign_key: :movie_id,
            dependent: :destroy,
            inverse_of: :movie
+  has_many :show_times, dependent: :destroy
 end
