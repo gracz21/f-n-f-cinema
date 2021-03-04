@@ -12,5 +12,7 @@ describe Movie, type: :model do
         .inverse_of(:movie)
         .dependent(:destroy)
     end
+
+    it { is_expected.to have_many(:show_times).dependent(:destroy) }
   end
 end

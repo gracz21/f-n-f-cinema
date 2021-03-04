@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe User, type: :model do
-  describe 'relationships' do
+  describe 'associations' do
     it do
       is_expected
         .to have_many(:ratings)

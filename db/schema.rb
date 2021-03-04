@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_194609) do
+ActiveRecord::Schema.define(version: 2021_03_04_171618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,16 @@ ActiveRecord::Schema.define(version: 2021_03_03_194609) do
     t.index ["omdb_id"], name: "index_movies_on_omdb_id", unique: true
   end
 
+  create_table "show_times", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.bigint "movie_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_show_times_on_movie_id"
+    t.index ["start_time"], name: "index_show_times_on_start_time"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -69,4 +79,5 @@ ActiveRecord::Schema.define(version: 2021_03_03_194609) do
   add_foreign_key "allowlisted_jwts", "users", on_delete: :cascade
   add_foreign_key "movie_ratings", "movies"
   add_foreign_key "movie_ratings", "users"
+  add_foreign_key "show_times", "movies"
 end
