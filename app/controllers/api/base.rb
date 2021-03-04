@@ -8,6 +8,7 @@ module API
     helpers Helpers::ErrorHelper
     helpers Helpers::PermittedParamsHelper
 
+    mount LoginEndpointDocumentation
     mount V1::Base
 
     add_swagger_documentation(
@@ -15,7 +16,8 @@ module API
       array_use_braces: true,
       info: {
         title: 'Fast and Furious Cinema API',
-        description: 'To obtain the access token, use the login endpoint'
+        description: 'To obtain the api key, use the /login endpoint '\
+                     '(the token will be returned in the "authorization" header)'
       },
       security_definitions: {
         jwt_token: {

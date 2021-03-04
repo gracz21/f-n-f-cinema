@@ -16,8 +16,8 @@ module API
           requires :first_name, type: String
           requires :last_name, type: String
           requires :email, type: String
-          requires :password, type: String
-          requires :password_confirmation, type: String
+          requires :password, type: String, documentation: { type: :password }
+          requires :password_confirmation, type: String, documentation: { type: :password }
         end
 
         post do
