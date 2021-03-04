@@ -80,3 +80,9 @@ The Swagger 2.0 compliant documentation is available on `localhost:3000/swagger`
 - Start using `yard` gem to improve documentation of more complicated services.
 
 - Wrap any single operation (e.g. create, update) into a service and combine such single steps into transactions with the usage of `dry-monads` gem.
+
+- Add some seeds for the development.
+
+- Dockerize the environment.
+
+- Work on the `puma` server config (e.g. number of workers, threads, etc.).
