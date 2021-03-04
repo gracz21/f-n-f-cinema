@@ -76,3 +76,7 @@ The Swagger 2.0 compliant documentation is available on `localhost:3000/swagger`
 - Improve the way of the average movie rating calculation. Maybe the ratings should be re-calculated regularly by some background job. Maybe the average rating-related fields should be moved to a separate model at least (so the whole movie record is not locked while updating its rating).
 
 - Add missing endpoints to e.g. fetch list of all movies, remove rating, etc.
+
+- Start using `yard` gem to improve documentation of more complicated services.
+
+- Wrap any single operation (e.g. create, update) into a service and combine such single steps into transactions with the usage of `dry-monads` gem.
