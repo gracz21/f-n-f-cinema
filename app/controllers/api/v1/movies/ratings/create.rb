@@ -5,7 +5,7 @@ module API
     module Movies
       module Ratings
         class Create < Grape::API
-          desc '[Regular users only] Create a rating for given movue',
+          desc '[Regular users only] Create a rating for given movie',
                success: { code: 201, message: 'Movie rating created successfully' },
                failure: [
                  { code: 401, message: 'User is not authenticated' },
