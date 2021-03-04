@@ -3,6 +3,17 @@
 require 'rails_helper'
 
 describe User, type: :model do
+  describe 'relationships' do
+    it do
+      is_expected
+        .to have_many(:ratings)
+        .class_name('MovieRating')
+        .with_foreign_key(:user_id)
+        .inverse_of(:creator)
+        .dependent(:destroy)
+    end
+  end
+
   describe '#role?' do
     subject(:call) { user.role?(role) }
 

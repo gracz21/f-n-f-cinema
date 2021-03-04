@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_194324) do
+ActiveRecord::Schema.define(version: 2021_03_03_194609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 2021_03_02_194324) do
     t.bigint "user_id", null: false
     t.index ["jti"], name: "index_allowlisted_jwts_on_jti", unique: true
     t.index ["user_id"], name: "index_allowlisted_jwts_on_user_id"
+  end
+
+  create_table "movie_ratings", force: :cascade do |t|
+    t.bigint "movie_id", null: false
+    t.bigint "user_id", null: false
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id", "user_id"], name: "index_movie_ratings_on_movie_id_and_user_id", unique: true
+    t.index ["movie_id"], name: "index_movie_ratings_on_movie_id"
+    t.index ["user_id"], name: "index_movie_ratings_on_user_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -36,6 +47,8 @@ ActiveRecord::Schema.define(version: 2021_03_02_194324) do
     t.string "runtime"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "overall_ratings_sum"
+    t.integer "overall_ratings_count"
     t.index ["omdb_id"], name: "index_movies_on_omdb_id", unique: true
   end
 
@@ -54,4 +67,6 @@ ActiveRecord::Schema.define(version: 2021_03_02_194324) do
   end
 
   add_foreign_key "allowlisted_jwts", "users", on_delete: :cascade
+  add_foreign_key "movie_ratings", "movies"
+  add_foreign_key "movie_ratings", "users"
 end
