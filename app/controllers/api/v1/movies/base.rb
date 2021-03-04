@@ -14,7 +14,9 @@ module API
               end
             end
 
+            mount Show
             mount Update
+
             mount Ratings::Base
           end
         end
